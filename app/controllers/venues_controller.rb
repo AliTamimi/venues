@@ -1,5 +1,7 @@
 class VenuesController < ApplicationController
   before_action :set_venue, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /venues
   # GET /venues.json
@@ -14,7 +16,7 @@ class VenuesController < ApplicationController
 
   # GET /venues/new
   def new
-    @venue = Venue.new
+    @venue = current_user.venues.build
   end
 
   # GET /venues/1/edit
@@ -24,7 +26,7 @@ class VenuesController < ApplicationController
   # POST /venues
   # POST /venues.json
   def create
-    @venue = Venue.new(venue_params)
+    @venue = current_user.venues.new(venue_params)
 
     respond_to do |format|
       if @venue.save
@@ -70,5 +72,15 @@ class VenuesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def venue_params
       params.require(:venue).permit(:description, :vType, :vSize, :num, :location)
+    end
+    
+    def correct_user
+      @venue = current_user.venues.find_by(id: params[:id])
+      redirect_to venues_path, notice: "Not authorized to edit this venue" if @venue.nil?
+    end
+    
+    def correct_user
+      @venue = current_user.venues.find_by(id: params[:id])
+      redirect_to venues_path, notice: "Not authorized to edit this venue" if @venue.nil?
     end
 end
