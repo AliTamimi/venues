@@ -24,6 +24,8 @@
   <strong>Location:</strong>
   <%= @venue.location %>
 </p>
-
+<p>
+  <%= image_tag @venue.image.url(:medium) %>
+</p>
 <%= link_to 'Edit', edit_venue_path(@venue) %> |
 <%= link_to 'Back', venues_path %>

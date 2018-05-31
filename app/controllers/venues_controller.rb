@@ -31,10 +31,8 @@ class VenuesController < ApplicationController
     respond_to do |format|
       if @venue.save
         format.html { redirect_to @venue, notice: 'Venue was successfully created.' }
-        format.json { render :show, status: :created, location: @venue }
       else
         format.html { render :new }
-        format.json { render json: @venue.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -45,10 +43,8 @@ class VenuesController < ApplicationController
     respond_to do |format|
       if @venue.update(venue_params)
         format.html { redirect_to @venue, notice: 'Venue was successfully updated.' }
-        format.json { render :show, status: :ok, location: @venue }
       else
         format.html { render :edit }
-        format.json { render json: @venue.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -71,7 +67,7 @@ class VenuesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def venue_params
-      params.require(:venue).permit(:description, :vType, :vSize, :num, :location)
+      params.require(:venue).permit(:description, :vType, :vSize, :num, :location, :image)
     end
     
     def correct_user
