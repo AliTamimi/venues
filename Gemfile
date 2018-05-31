@@ -12,7 +12,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap', '~> 4.1', '>= 4.1.1'
 gem 'font-awesome-sass', '~> 5.0.13'
 gem 'devise', '~> 4.4', '>= 4.4.3'  
-gem 'fog-aws'
+gem 'paperclip', '~> 5.0.0'
+gem 'aws-sdk'
 
 group :development, :test do
   
