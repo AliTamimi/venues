@@ -13,6 +13,7 @@ gem 'bootstrap', '~> 4.1', '>= 4.1.1'
 gem 'font-awesome-sass', '~> 5.0.13'
 gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'paperclip', '~> 4.2.0'
+gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
 
 group :development, :test do
   
