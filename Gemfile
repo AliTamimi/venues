@@ -14,6 +14,8 @@ gem 'font-awesome-sass', '~> 5.0.13'
 gem 'devise', '~> 4.4', '>= 4.4.3'  
 gem 'paperclip'
 gem 'aws-sdk',   '~> 2.6'
+gem 'jquery-turbolinks', '~> 2.1'
+gem 'masonry-rails', '~> 0.2.4'
 
 group :development, :test do
   

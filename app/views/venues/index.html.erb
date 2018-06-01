@@ -1,25 +1,42 @@
+<div class="" style="">
+  <%= render 'home/jambo' %>
+</div>
+
 <div class="float-right">
-  <%= link_to 'New Venue', new_venue_path %>
+  <%= link_to 'New Venue', new_venue_path if user_signed_in? %>
 </div>
 <br>
+<div class="row">
 <p id="notice"><%= notice %></p>
-
+  <div id="venues" class="transitions-enabled centered clearfix masonry">
     <% @venues.each do |venue| %>
-      <%= link_to image_tag(venue.image.url(:medium)), venue %><br/>
-      <%= venue.description %>
-      <%= venue.vType %>
-      <%= venue.vSize %>
-      <%= venue.num %>
-      <%= venue.location %><br/>
-      <span>by: </span><%= venue.user.name if venue.user %><br>
-      <% link_to 'Show', venue %>
-      
-      <% if venue.user == current_user %>
-      <%= link_to 'Edit', edit_venue_path(venue) %>
-      <%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-      
+    <div class="box">
+      <div class="card">
+        <%= link_to image_tag(venue.image.url(:medium)), venue %>
+        <div class="card-body">
+          <h5 class="card-title"><%= venue.description %></h5>
+          <p class="card-text">
+            <%= venue.vType %>
+            <%= venue.vSize %>
+            <%= venue.num %>
+            <%= venue.location %><br/>
+            <span>by: </span><small><%= venue.user.name if venue.user %></small>
+            </p>
+            <% link_to 'Show', venue %>
+            <% if venue.user == current_user %>
+            <p class="card-text">
+              <small class="text-muted">
+              <%= link_to '', edit_venue_path(venue), class:'fas fa-edit fa-lg text-secondary float-right'%>
+              <% link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </small></p>
+            </p>
+            <% end %>
+          
+        </div>
+      </div>
+   </div>
     <% end %>
-
+  </div>
+</div>
 
 

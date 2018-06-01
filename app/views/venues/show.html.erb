@@ -1,22 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Description1:</strong>
+  <%= image_tag @venue.image.url(:medium) %>
+</p>
+<p>
   <%= @venue.description %>
 </p>
 
 <p>
-  <strong>Vtype:</strong>
+  <strong>Type:</strong>
   <%= @venue.vType %>
 </p>
 
 <p>
-  <strong>Vsize:</strong>
+  <strong>Size:</strong>
   <%= @venue.vSize %>
 </p>
 
 <p>
-  <strong>Num:</strong>
+  <strong>Num of people:</strong>
   <%= @venue.num %>
 </p>
 
@@ -24,9 +26,7 @@
   <strong>Location:</strong>
   <%= @venue.location %>
 </p>
-<p>
-  <%= image_tag @venue.image.url(:medium) %>
-</p>
+
 <% if @venue.user == current_user %>
   <%= link_to 'Edit', edit_venue_path(@venue) %> |
 <% end %>
