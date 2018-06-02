@@ -1,5 +1,7 @@
-<br/>
-<div class="card" style="width: 18rem;">
+<div style="background: url(https://s3.amazonaws.com/mctvenueimg/mountain.png) no-repeat center center;position: absolute;
+                    width: 100%;top:0;left:0;z-index: -1 ">
+  <br/><br><br/><br/><br/>
+<div class="card col-md-5 offset-md-5" style="width: 18rem; opacity: 0.9;">
   <div class="card-body">
     <h5 class="card-title">Log in</h5>
     <p class="card-text">
@@ -23,19 +25,21 @@
         
           <div class="actions">
             <%= f.submit "Log in", class:'btn btn-secondary float-right' %>
-            <br/><br/>
+            <br/>
+            <br/>
           </div>
         <% end %>
       </p>
+      <div class="">
+        <% flash.each do |name, msg| %>
+          <small><%= content_tag(:div, msg, class: "alert alert-danger") %></small>
+        <% end %>
+     </div>
       <hr>
       <p class="card-text">
         <small><%= render "devise/shared/links" %></small>
       </p>
   </div>
 </div>
-
-
-
-
-
-
+<br/><br><br/><br/><br/><br/>
+</div>

@@ -10,15 +10,25 @@
 
 <%= render 'home/header' %>
 <div class="container">
-  <div class="">
-    <% flash.each do |name, msg| %>
-     <%= content_tag(:div, msg, class: "alert alert-info") %>
-    <% end %>
-  </div>
 
   <%= yield %>
 </div>
 
+<script>
+  $(function () {
+    $('[data-toggle="popover"]').popover({
+      
+      container: 'body',
+      html: true,
+      trigger: 'focus',
+      content: function () {
+          var content = "And here's some amazing content. It's very engaging. Right?";
+          return content;
+        }
+    });
+  })
+</script>
 
 </body>
+
 </html>

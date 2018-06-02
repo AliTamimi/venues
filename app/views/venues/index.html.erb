@@ -1,14 +1,14 @@
 <div class="" style="">
-<div class="" style="background: url('https://s3.amazonaws.com/mctvenueimg/matrah.jpg') center center;position: absolute;
+<div class="" style="background: url('https://s3.amazonaws.com/mctvenueimg/mountain.png') center center;position: absolute;
                     width: 100%;top:0;left:0;z-index: -1 ">
   <%= render 'home/jambo' %>
 </div>
 
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 <div class="offset-md-3">
           <div class="form-inline">
              <div class="" style="padding-right:10px">
-                     <select class="custom-select" style="background-color: transparent;color: #fff; border-color: #fff;">
+                     <select class="custom-select" style="background-color: transparent;color: #000; border-color: #000;">
                             <option selected>event type</option>
                             <option>Confrence</option>
                             <option>Lunch / Dinner</option>
@@ -19,7 +19,7 @@
                         </select>
              </div>  
              <div class="" style="padding-right:10px">
-                     <select class="custom-select" style="background-color: transparent;color: #fff; border-color: #fff;">
+                     <select class="custom-select" style="background-color: transparent;color: #000; border-color: #000;">
                             <option selected>number of people</option>
                             <option>0-50</option>
                             <option>51-100</option>
@@ -28,7 +28,7 @@
                         </select>
              </div> 
              <div class="" style="padding-right:10px">
-                     <select class="custom-select" style="background-color: transparent;color: #fff; border-color: #fff;">
+                     <select class="custom-select" style="background-color: transparent;color: #000; border-color: #000;">
                             <option selected>location</option>
                             <option>Athiba</option>
                             <option>Seeb</option>
@@ -37,7 +37,7 @@
                         </select>
              </div> 
              <div class="">
-                     <button class="btn btn-outline-light">search</button>
+                     <button class="btn btn-outline-dark">search</button>
              </div> 
              
           </div>
@@ -49,8 +49,8 @@
 </div>
 <br/><br/>
 <div class="row">
-<p id="notice"><%= notice %></p>
-  <div id="venues" class="transitions-enabled centered clearfix masonry">
+<p id="notice"><% notice %></p>
+  <div id="venues" class="transitions-enabled centered clearfix masonry" style="overflow-y: auto; height:400px;">
     <% @venues.each do |venue| %>
     <div class="box">
       <div class="card">
