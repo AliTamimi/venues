@@ -13,6 +13,13 @@ $body-bg: #e9e9e9;
   left:0;
   z-index: -1;
 }
+
+/*navbar transpartent*/
+.navbar-overlay {
+    margin-bottom: -104px; // Pulls the content under the navbar up by 104px which is the height of your navbar.
+    z-index: 1; // Tells the browser that your navbar should be ontop of your content. This allows your links in your navbar to still work when you hover over them.
+}
+
 /*center*/
 .center {
     text-align: center;
