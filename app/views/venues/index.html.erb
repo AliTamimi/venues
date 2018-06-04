@@ -44,9 +44,9 @@
                 <% end %>
               </div>
             </div>
-            <div id="venues" class="d-lg-none .d-xl-block">
+            <div id="venues" class="d-lg-none .d-xl-block" style="width:100%;">
                 <% @venues.each do |venue| %>
-                <div class="box" style="width:100%">
+                <div class="box" style="width:100%; padding-right:30px; padding-left: 20px; padding-bottom: 30px;">
                   <div class="card">
                     <%= link_to image_tag(venue.image.url(:medium)), venue %>
                     <div class="card-body">
