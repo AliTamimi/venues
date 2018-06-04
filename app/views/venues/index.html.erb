@@ -1,87 +1,83 @@
-<div class="" style="">
 <div class="" style="background: url('https://s3.amazonaws.com/mctvenueimg/mountain.png') center center;position: absolute;
-                    width: 100%;top:0;left:0;z-index: -1 ">
+                    width: 100%; height: 800px; top:0;left:0;z-index: -1 ">
   <%= render 'home/jambo' %>
-</div>
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-<div class="offset-md-3">
-          <div class="form-inline">
-             <div class="" style="padding-right:10px">
-                     <select class="custom-select" style="background-color: transparent;color: #000; border-color: #000;">
-                            <option selected>event type</option>
-                            <option>Confrence</option>
-                            <option>Lunch / Dinner</option>
-                            <option>Performance</option>
-                            <option>Wedding</option>
-                            <option>Party</option>
-                            <option>Meeting</option>
-                        </select>
-             </div>  
-             <div class="" style="padding-right:10px">
-                     <select class="custom-select" style="background-color: transparent;color: #000; border-color: #000;">
-                            <option selected>number of people</option>
-                            <option>0-50</option>
-                            <option>51-100</option>
-                            <option>101-200</option>
-                            <option>more than 200</option>
-                        </select>
-             </div> 
-             <div class="" style="padding-right:10px">
-                     <select class="custom-select" style="background-color: transparent;color: #000; border-color: #000;">
-                            <option selected>location</option>
-                            <option>Athiba</option>
-                            <option>Seeb</option>
-                            <option>Mawaleh</option>
-                            <option>Alhail</option>
-                        </select>
-             </div> 
-             <div class="">
-                     <button class="btn btn-outline-dark">search</button>
-             </div> 
-             
-          </div>
-        </div>
-
-
-<div class="row float-right" style="padding-right:40px;">
-  <%= link_to '', (new_venue_path if(user_signed_in?)), class:'fas fa-plus-circle fa-2x text-light' %>
-</div>
-<br/><br/>
-<div class="row">
-<p id="notice"><% notice %></p>
-  <div id="venues" class="transitions-enabled centered clearfix masonry" style="overflow-y: auto; height:400px;">
-    <% @venues.each do |venue| %>
-    <div class="box">
-      <div class="card">
-        <%= link_to image_tag(venue.image.url(:medium)), venue %>
-        <div class="card-body">
-          <h6 class="card-title"><%= venue.description %></h6>
-          <p class="card-text fa-sm">
-            <%= venue.vType %>
-            <%= venue.vSize %>
-            <%= venue.num %>
-            <%= venue.location %><br/>
-            <small><span>by: </span><%= venue.user.name if venue.user %></small>
-            </p>
-            <% link_to 'Show', venue %>
-            <% if venue.user == current_user %>
-            <p class="card-text">
-              <small class="text-muted">
-              <%= link_to '', edit_venue_path(venue), class:'fas fa-edit fa-lg text-secondary float-right'%>
-              <% link_to '', venue, method: :delete, data: { confirm: 'Are you sure?' }, class:'fas fa-trash-alt fa-lg text-secondary' %>
-              </small></p>
-            </p>
-            <% end %>
+  <div class="center">
           
         </div>
-      </div>
-   </div>
-    <% end %>
-  </div>
+    <div class="row">
+        
+    </div>
+    <div class="row">
+        <div class="row float-right" style="padding-right:40px;">
+          <%= link_to '', (new_venue_path if(user_signed_in?)), class:'fas fa-plus-circle fa-2x text-light' %>
+        </div>
+        <br/>
+        <div class="container-fluid">
+            <p id="notice"><% notice %></p>
+              <div id="venues" class="transitions-enabled centered clearfix masonry d-none d-lg-block" style="overflow-y: auto; height:400px;">
+                <% @venues.each do |venue| %>
+                <div class="box">
+                  <div class="card">
+                    <%= link_to image_tag(venue.image.url(:medium)), venue %>
+                    <div class="card-body">
+                      <h6 class="card-title"><%= venue.description %></h6>
+                      <p class="card-text fa-sm">
+                        <%= venue.vType %>
+                        <%= venue.vSize %>
+                        <%= venue.num %>
+                        <%= venue.location %><br/>
+                        <small><span>by: </span><%= venue.user.name if venue.user %></small>
+                        </p>
+                        <% link_to 'Show', venue %>
+                        <% if venue.user == current_user %>
+                        <p class="card-text">
+                          <small class="text-muted">
+                          <%= link_to '', edit_venue_path(venue), class:'fas fa-edit fa-lg text-secondary float-right'%>
+                          <% link_to '', venue, method: :delete, data: { confirm: 'Are you sure?' }, class:'fas fa-trash-alt fa-lg text-secondary' %>
+                          </small></p>
+                        </p>
+                        <% end %>
+                      
+                    </div>
+                  </div>
+               </div>
+                <% end %>
+              </div>
+            </div>
+            <div id="venues" class="d-lg-none .d-xl-block">
+                <% @venues.each do |venue| %>
+                <div class="box" style="width:100%">
+                  <div class="card">
+                    <%= link_to image_tag(venue.image.url(:medium)), venue %>
+                    <div class="card-body">
+                      <h6 class="card-title"><%= venue.description %></h6>
+                      <p class="card-text fa-sm">
+                        <%= venue.vType %>
+                        <%= venue.vSize %>
+                        <%= venue.num %>
+                        <%= venue.location %><br/>
+                        <small><span>by: </span><%= venue.user.name if venue.user %></small>
+                        </p>
+                        <% link_to 'Show', venue %>
+                        <% if venue.user == current_user %>
+                        <p class="card-text">
+                          <small class="text-muted">
+                          <%= link_to '', edit_venue_path(venue), class:'fas fa-edit fa-lg text-secondary float-right'%>
+                          <% link_to '', venue, method: :delete, data: { confirm: 'Are you sure?' }, class:'fas fa-trash-alt fa-lg text-secondary' %>
+                          </small></p>
+                        </p>
+                        <% end %>
+                      
+                    </div>
+                  </div>
+               </div>
+                <% end %>
+              </div>
+            </div>
+    </div>
+    <div class="row float-right" >
+        <br/>
+        <%= will_paginate @venues, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, class:'text-center' %>
+    </div>
 </div>
-</div>
-<div class="row float-right" >
-    <br/>
-    <%= will_paginate @venues, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, class:'text-center' %>
-</div>
+
