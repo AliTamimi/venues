@@ -1,46 +1,46 @@
-<div style="background: url(https://s3.amazonaws.com/mctvenueimg/mountain.png) no-repeat center center;position: absolute;
+<div style="background: url(https://s3.amazonaws.com/mctvenueimg/vHeader1.png) no-repeat center center;position: absolute;
                     width: 100%;top:0;left:0;z-index: -1 ">
   <br/><br><br/><br/><br/>
-  
-<div class="card" style="width: 18rem; opacity: 0.9;">
-  <div class="card-body">
-    <h5 class="card-title">Log in</h5>
-    <p class="card-text">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="form-group">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-control' %>
-          </div>
-        
-          <div class="form-group">
-            <%= f.label :password %><br />
-            <%= f.password_field :password, autocomplete: "off", class:'form-control' %>
-          </div>
-        
-          <% if devise_mapping.rememberable? -%>
-            <div class="form-group checkbox checkbox-warning">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me, class:'h6' %>
-            </div>
-          <% end -%>
-        
-          <div class="actions">
-            <%= f.submit "Log in", class:'btn btn-secondary float-right' %>
-            <br/>
-            <br/>
-          </div>
-        <% end %>
-      </p>
-      <div class="">
-        <% flash.each do |name, msg| %>
-          <small><%= content_tag(:div, msg, class: "alert alert-danger") %></small>
-        <% end %>
-     </div>
-      <hr>
-      <p class="card-text">
-        <small><%= render "devise/shared/links" %></small>
-      </p>
-  </div>
-</div>
+      <div class="card mx-auto" style="opacity: 0.9; width:300px;">
+      <div class="card-body">
+        <h5 class="card-title">Log in</h5>
+        <p class="card-text">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="form-group">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-control' %>
+              </div>
+            
+              <div class="form-group">
+                <%= f.label :password %><br />
+                <%= f.password_field :password, autocomplete: "off", class:'form-control' %>
+              </div>
+            
+              <% if devise_mapping.rememberable? -%>
+                <div class="form-group checkbox checkbox-warning">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me, class:'h6' %>
+                </div>
+              <% end -%>
+            
+              <div class="actions">
+                <%= f.submit "Log in", class:'btn btn-secondary float-right' %>
+                <br/>
+                <br/>
+              </div>
+            <% end %>
+          </p>
+          <div class="">
+            <% flash.each do |name, msg| %>
+              <small><%= content_tag(:div, msg, class: "alert alert-danger") %></small>
+            <% end %>
+         </div>
+          <hr>
+          <p class="card-text">
+            <small><%= render "devise/shared/links" %></small>
+          </p>
+      </div>
+    </div>
+
 <br/><br><br/><br/><br/><br/>
 </div>
