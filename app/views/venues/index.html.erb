@@ -1,4 +1,4 @@
-<div class="" style="background: url('https://s3.amazonaws.com/mctvenueimg/vHeaderMic.jpg') center center;position: absolute;
+<div class="" style="background: url('https://s3.amazonaws.com/mctvenueimg/vHeaderMic1.png') center center;position: absolute;
                     width: 100%; height: 800px; top:0;left:0;z-index: -1 ">
   <%= render 'home/jambo' %>
 
@@ -9,7 +9,7 @@
         <br/>
         <div class="container-fluid">
             <p id="notice"><% notice %></p>
-              <div id="venues" class="transitions-enabled centered clearfix masonry d-none d-lg-block" style="overflow-y: auto; height:400px;">
+              <div id="venues" class="transitions-enabled centered clearfix masonry d-none d-lg-block" style="overflow-y: auto;">
                 <% @venues.each do |venue| %>
                 <div class="box">
                   <div class="card">
@@ -75,4 +75,5 @@
         <%= will_paginate @venues, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, class:'text-center' %>
     </div>
 </div>
-
+<script>
+</script>
