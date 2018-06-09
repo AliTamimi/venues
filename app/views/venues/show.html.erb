@@ -1,10 +1,10 @@
-<div class="" style="background: url('https://s3.amazonaws.com/mctvenueimg/vHeaderMic1.png') center center;position: absolute;
-                    width: 100%; height: 800px; top:0;left:0;z-index: -1 ">
+<div class="" style="background: url('https://s3.amazonaws.com/mctvenueimg/vHeaderMic1.png') center top;position: absolute;
+                    width: 100%; height: 60px; top:0;left:0;z-index: -1 ">
   <br/><br/><br/><br/>
 <p id="notice"><%= notice %></p>
 
   <div class="container-fluid form-inline">
-    <div class="col-md-3 card" style="background-color: #f9f4e1;">
+    <div class="col-md-3 card" style=" ">
       <br>
       <%= image_tag @venue.image.url(:medium) %>
       <h4><%= @venue.description %></h4>
@@ -24,43 +24,85 @@
       <strong>Location:</strong>
       <%= @venue.location %>
     </p>
+    <p>
+      <div class="mapouter">
+        <div class="gmap_canvas">
+          <iframe width="290" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=muscat&t=&z=7&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+          <a href="https://www.pureblack.de">pureblack.de</a></div>
+          <style>.mapouter{text-align:right;height:300px;width:290px;}.gmap_canvas {overflow:hidden;background:none!important;height:300px;width:290px;}</style></div>
+    </p> 
+    
     <% if @venue.user == current_user %>
-      <%= link_to 'Edit', edit_venue_path(@venue) %> |
+      
     <% end %>
-    <%= link_to 'Back', root_path %>
+    
+    <%= link_to '', root_path, class:'fas fa-angle-left fa-lg text-secondary' %>
+    <br/>
     </div>
     <div class="col-md-1"> </div>
-    <div class="col-md-8 card">
+    <div class="col-md-8 card" style="border:none; vertical-align:top;">
       <br/>
     <h4>book this venue</h4>
     <br/>
+    <hr/>
     <div class="form-inline">
       <label class="col-md-2">Name</label>
       <input type="text" class="form-control col-md-8">
     </div>
+    <hr/>
     <div class="form-inline">
       <label class="col-md-2">Event type</label>
       <input type="text" class="form-control col-md-8">
     </div>
+    <hr/>
     <div class="form-inline">
       <label class="col-md-2">Guests</label>
       <input type="text" class="form-control col-md-8">
     </div>
+    <hr/>
     <div class="form-inline">
       <label class="col-md-2">Date</label>
       <input type="text" class="form-control col-md-8">
     </div>
+    <hr/>
     <div class="form-inline">
       <label class="col-md-2">Requests</label>
       <textarea type="text" class="form-control col-md-8" rows="5"></textarea>
     </div>
+    <hr/>
+    <div class="form-group">
+      <label class="col-2">Additionals</label>
+      <div class="col-md-8 form-inline">
+        <div class="col-md-3 form-inline">
+          <input id="chk1" type="checkbox" ><label for="chk1">&nbsp; wi-fi</label>
+        </div>
+        <div class="col-md-3 form-inline">
+          <input id="chk2" type="checkbox"><label for="chk2">&nbsp; food</label>
+        </div>
+        <div class="col-md-3 form-inline">
+          <input id="chk3" type="checkbox"><label for="chk3">&nbsp; projector</label>
+        </div>
+        <div class="col-md-3 form-inline">
+          <input id="chk4" type="checkbox"><label for="chk4">&nbsp; board</label>
+        </div>
+        <div class="col-md-3 form-inline">
+          <input id="chk5" type="checkbox"><label for="chk5">&nbsp; coffee</label>
+        </div>
+        <div class="col-md-3 form-inline">
+          <input id="chk6" type="checkbox"><label for="chk6">&nbsp; tea</label>
+        </div>
+        <div class="col-md-3 form-inline">
+          <input id="chk7" type="checkbox"><label for="chk7">&nbsp; laptop</label>
+        </div>
+        <div class="col-md-3 form-inline">
+          <input id="chk8" type="checkbox"><label for="chk8">&nbsp; coffee</label></div>
+      </div>
+    </div>
     <br/><br/><br/>
     <div class="form-inline">
-      <button type="button" class="btn btn-secondary btn-block">send request</button>
+      <button type="button" class="btn vbtnSave btn-block">send request</button>
     </div>
     <br/>
     </div>
   </div>
-
-
 </div>

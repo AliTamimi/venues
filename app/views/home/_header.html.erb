@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="#">
-    <%= link_to 'Venues', root_path, class: 'navbar-brand text-secondary' %></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <%= link_to 'Venues', root_path, class: 'navbar-brand text-secondary gfont' %></a>
+  <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -30,5 +30,31 @@
     <% end %>
     </form>
   </div>
+  <div class="d-lg-none .d-xl-block text-secondary" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</div>
+  <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <% if user_signed_in? %>
+    <a><%= link_to 'Home', root_path %></a>
+    <a><%= link_to 'About', home_about_path %></a>
+    <a><%= link_to 'Add Venue', (new_venue_path unless(user_signed_in?)) %></a>
+    <a><%= link_to 'Profile', edit_user_registration_path %></a>
+    <a><%= link_to 'Logout', destroy_user_session_path, method: :delete %></a>
+  <% else %>
+   <a><%= link_to 'Home', root_path %></a>
+   <a><%= link_to 'About', home_about_path %></a>
+   <a><%= link_to 'Add Venue', (new_venue_path unless(user_signed_in?)) %></a>
+   <a><%= link_to 'Login', new_user_session_path %></a>
+   <a><%= link_to 'Join', new_user_registration_path %></a>
+  <% end %>
+</div>
 </nav>
 
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
