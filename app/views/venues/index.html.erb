@@ -1,10 +1,7 @@
+<div class="row">
 <div class="" style="background: url('https://s3.amazonaws.com/mctvenueimg/vHeaderMic1.png') center center;position: absolute;
                     width: 100%; height: 800px; top:0;left:0;z-index: -1 ">
   <%= render 'home/jambo' %>
-
-  <div class="center">
-          
-        </div>
     <div class="row">
         <br/>
         <div class="container-fluid">
@@ -69,11 +66,13 @@
                 <% end %>
               </div>
             </div>
+            
     </div>
     <div class="row float-right" >
         <br/>
         <%= will_paginate @venues, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, class:'text-center' %>
     </div>
+</div>
 </div>
 <script>
 </script>

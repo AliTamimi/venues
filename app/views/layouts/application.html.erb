@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1 ,maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
 </head>
@@ -16,21 +16,6 @@
 
   <%= yield %>
 </div>
-
-<script>
-  $(function () {
-    $('[data-toggle="popover"]').popover({
-      
-      container: 'body',
-      html: true,
-      trigger: 'focus',
-      content: function () {
-          var content = "And here's some amazing content. It's very engaging. Right?";
-          return content;
-        }
-    });
-  })
-</script>
 
 </body>
 
